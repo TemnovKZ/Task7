@@ -1,0 +1,117 @@
+*{padding:0;margin:0;border:0;}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+
+/*----------------------------------------------------------------*/
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: white;
+    letter-spacing: 5px;
+}
+
+.wrapper {
+    height: 100vh;
+    background-image: url(../img/bg-day.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.main {
+    height: 100%;
+    max-width: 1140px;
+    padding: 56px 15px 98px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.time {
+    position: relative;
+    height: 40%;
+
+		&__title {
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: 4px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+		}
+
+		&__icon {
+            width: 24px;
+            height: 24px;
+		}
+
+		&__clock {
+            font-size: 200px;
+            font-weight: 700;
+            letter-spacing: -5px;
+            line-height: 200px;
+		}
+
+		&__button {
+            position: absolute;
+            right: 0;
+            height: 54px;
+            width: 146px;
+            border: 1px solid #FFFFFF;
+            border-radius: 28px;
+            background-color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 13px;
+		}
+
+		&__more {
+            position: relative;
+            left: 5px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #000000;
+            opacity: 0.5;
+		}
+
+		&__krug {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #303030;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+		}
+
+        &__arrow {
+            position: relative;
+            top: 2px;
+        }
+
+        &__button:hover &__krug {
+            background-color: #999999;
+        }
+
+}
+
+/*----------------------------------------------------------------*/
