@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -181,6 +181,37 @@ body {
 }
 .time__button:hover .time__krug {
   background-color: #999999;
+}
+
+.random {
+  position: relative;
+  max-width: 573px;
+  letter-spacing: 0.9px;
+  font-family: "Merriweather", serif;
+}
+.random__btn {
+  background-color: transparent;
+}
+.random__img {
+  position: absolute;
+  top: 22px;
+  right: -20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.random__btn:hover .random__img {
+  -webkit-transform: rotate(120deg) scale(1.1);
+          transform: rotate(120deg) scale(1.1);
+}
+.random__title {
+  font-size: 18px;
+  line-height: 28px;
+}
+.random__subtitle {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
 }
 
 /*----------------------------------------------------------------*/
