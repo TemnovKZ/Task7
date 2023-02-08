@@ -2,7 +2,6 @@ let clock = document.querySelector('.time__clock');
 let wrapper = document.querySelector('.wrapper');
 let timeText = document.querySelector('.time__text');
 let hour = dayjs().format('HH');
-wrapper.style.backgroundImage = 'url(../img/bg-day.jpg)';
 
 
 clock.innerHTML = dayjs().format('HH:mm');
