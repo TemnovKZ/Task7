@@ -17,14 +17,6 @@ let hour = dayjs().format('HH');
 
 clock.innerHTML = dayjs().format('HH:mm');
 
-setInterval(function(){
-    clock.innerHTML = dayjs().format('HH:mm');
-    if (hour < 20 && hour > 7){
-        wrapper.style.backgroundImage = 'url(../img/bg-day.jpg)'
-    } else {
-        wrapper.style.backgroundImage = 'url(../img/bg-night.jpg)'
-    }
-}, 1000);   
 
 
 
