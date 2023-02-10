@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Merriweather&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -79,18 +79,18 @@ body {
 }
 
 .wrapper {
-  height: 100vh;
+  height: 100%;
   background-image: url(../img/bg-day.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  position: relative;
+  overflow: hidden;
 }
 
 .main {
   height: 100%;
-  max-width: 1140px;
-  padding: 56px 15px 98px;
-  margin: 0 auto;
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,11 +101,16 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  max-width: 1140px;
+  padding: 56px 15px 0px;
+  margin: 0 auto;
 }
 
 .time {
   position: relative;
   height: 40%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 .time__title {
   font-size: 20px;
@@ -119,15 +124,36 @@ body {
           align-items: center;
   gap: 16px;
 }
+.time__subtext {
+  position: relative;
+  left: -20px;
+}
 .time__icon {
   width: 24px;
   height: 24px;
+}
+.time__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 .time__clock {
   font-size: 200px;
   font-weight: 700;
   letter-spacing: -5px;
   line-height: 200px;
+}
+.time__utc {
+  position: relative;
+  left: 10px;
+  bottom: 20px;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 28px;
+  letter-spacing: 0;
 }
 .time__button {
   position: absolute;
@@ -148,6 +174,13 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 13px;
+}
+.time__local {
+  display: none;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 .time__more {
   position: relative;
@@ -184,7 +217,10 @@ body {
 }
 
 .random {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   position: relative;
+  left: 0;
   max-width: 573px;
   letter-spacing: 0.9px;
   font-family: "Merriweather", serif;
@@ -214,4 +250,134 @@ body {
   font-weight: 700;
 }
 
+.novis {
+  -webkit-transform: translateY(-300%);
+          transform: translateY(-300%);
+}
+
+.info {
+  display: none;
+  height: 40%;
+  min-width: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.info__wrapper {
+  padding: 74px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+.info__block {
+  margin-bottom: 50px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
+  position: relative;
+  z-index: 6;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 68px;
+  color: #303030;
+  letter-spacing: 0;
+}
+.info__text {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 2.5px;
+  color: #303030;
+}
+
+.info::before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.active {
+  display: block;
+}
+
 /*----------------------------------------------------------------*/
+@media (max-width: 688px) {
+  .time__clock {
+    font-size: 150px;
+    line-height: 150px;
+  }
+  .time__utc {
+    font-size: 25px;
+  }
+  .time__button {
+    bottom: 40px;
+    left: 0;
+  }
+  .time__local {
+    display: block;
+  }
+
+  .random {
+    max-width: 500px;
+  }
+  .random__title {
+    padding-right: 20px;
+  }
+  .random__img {
+    right: 0;
+  }
+}
+@media (max-width: 520px) {
+  .time__clock {
+    font-size: 120px;
+  }
+  .time__utc {
+    font-size: 20px;
+  }
+  .time__subtext {
+    display: none;
+  }
+  .time__block {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+@media (max-width: 380px) {
+  .main {
+    padding: 25px 15px 25px;
+  }
+
+  .time {
+    height: 35%;
+  }
+  .time__title {
+    font-size: 18px;
+  }
+  .time__clock {
+    font-size: 100px;
+    line-height: 120px;
+  }
+  .time__button {
+    bottom: 0;
+    left: 0;
+  }
+
+  .random__title {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

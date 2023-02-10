@@ -20,11 +20,13 @@
             <section class="time">
                 <div class="time__title">
                     <img class="time__icon" alt="sun" src="img/icon/sun.png">
-                    <p class="time__text"></p>
+                    <p class="time__text"></p><span class="time__subtext">, IT’S CURRENTLY</span>
                 </div>
-                <div class="time__clock">
-
+                <div class="time__block">
+                    <div class="time__clock"></div>
+                    <p class="time__utc"></p>
                 </div>
+                <div class="time__local"></div>
                 <div class="time__button">
                     <span class="time__more">MORE</span>
                     <div class="time__krug">
@@ -32,10 +34,35 @@
                     </div>
                 </div>
             </section>
+            <section class="info">
+                <div class="info__wrapper">
+                    <div class="info__block">
+                        <p class="info__text">CURRENT TIMEZONE</p>
+                        <div class="info__city"></div>
+                    </div>
+                    <div class="info__block">
+                        <p class="info__text">Day of the week</p>
+                        <div class="info__day-week"></div>
+                    </div>
+                    <div class="info__block">
+                        <p class="info__text">Day of the year</p>
+                        <div class="info__day-year"></div>
+                    </div>
+                    <div class="info__block">
+                        <p class="info__text">Week number</p>
+                        <div class="info__week"></div>
+                    </div>
+                </div>
+            </section>
         </main>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/timezone.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/dayOfYear.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/weekYear.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/weekOfYear.js"></script>
     <script src="js/main.js"></script>
-    
 </body>
 </html> 
