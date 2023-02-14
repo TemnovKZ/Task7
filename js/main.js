@@ -12,17 +12,21 @@ dayjs.extend(window.dayjs_plugin_weekOfYear);
 
 let clock = document.querySelector('.time__clock');
 let wrapper = document.querySelector('.wrapper');
+let timeZoneBg = document.querySelector('.info__bg');
 let timeText = document.querySelector('.time__text');
 let hour = dayjs().format('HH');
 
 clock.innerHTML = dayjs().format('HH:mm');
 
-setInterval(function(){
+
+setInterval (function() {
     clock.innerHTML = dayjs().format('HH:mm');
-    if (hour < 20 && hour > 7){
-        wrapper.style.backgroundImage = 'url(../img/bg-day.jpg)'
+    if (hour > 20 || hour < 7){
+        wrapper.classList.add ('night');
+        timeZoneBg.classList.add('nightzone');
     } else {
-        wrapper.style.backgroundImage = 'url(../img/bg-night.jpg)'
+        wrapper.classList.remove ('night');
+        timeZoneBg.classList.remove('nightzone');
     }
 }, 1000);   
 
@@ -94,12 +98,18 @@ let info = document.querySelector('.info');
 let random = document.querySelector('.random');
 let moreButton = document.querySelector('.time__button');
 let moreText = document.querySelector('.time__more');
+let moreArrow = document.querySelector('.time__arrow');
 
 moreButton.addEventListener('click', function() {
     info.classList.toggle('active');
     random.classList.toggle('novis');
-    moreText.innerHTML = 'LESS';
+    moreArrow.classList.toggle('trip');
 
+    if (info.classList.contains('active')) {
+        moreText.innerHTML = 'LESS'
+    } else {
+        moreText.innerHTML = 'MORE'
+    }
 });
 
 let localCity = document.querySelector('.time__local');

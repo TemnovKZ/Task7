@@ -34,21 +34,25 @@ body {
     overflow: hidden;
 }
 
+.night {
+    background-image: url(../img/bg-night.jpg);
+}
+
 .main {
     height: 100%;
-    z-index: 10;
+    max-width: 1140px;
+    padding: 0px 15px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 1140px;
-    padding: 56px 15px 0px;
-    margin: 0 auto;
+    height: 100%;
+    z-index: 10;
 }
 
 .time {
     position: relative;
     height: 40%;
-    transition: 0.5s;
 
 		&__title {
             font-size: 20px;
@@ -138,20 +142,27 @@ body {
         &__arrow {
             position: relative;
             top: 2px;
+            transition: 0.5s;
         }
-
 
         &__button:hover &__krug {
             background-color: #999999;
         }
 }
 
+.trip {
+    top: -1px;
+    transform: rotate(180deg);
+}
+
 
 
 .random {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-top: 56px;
     transition: 0.5s;
-    position: relative;
-    left: 0;
     max-width: 573px;
     letter-spacing: 0.9px;
     font-family: 'Merriweather', serif;
@@ -161,14 +172,15 @@ body {
     }
 
     &__img {
-        position: absolute;
-        top: 22px;
-        right: -20px;
         transition: 0.5s;
     }
 
     &__btn:hover &__img {
         transform: rotate(120deg) scale(1.1);
+    }
+
+    &__block {
+        margin-right: 20px;
     }
 
     &__title {
@@ -194,25 +206,35 @@ body {
     min-width: 100%;
     transition: 0.5s;
 
+    &__bg {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        background: rgba(255, 255, 255, 0.75);
+        color: #303030;
+    }
+
     &__wrapper {
-        padding: 74px 0px;
+        padding: 74px 15px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         max-width: 1110px;
         margin: 0 auto;
+        z-index: 5;
     }
 
     &__block {
+        display: flex;
+        flex-direction: column;
         margin-bottom: 50px;
-        flex: 1 0 50%;
         position: relative;
         z-index: 6;
         font-size: 56px;
         font-weight: 700;
         line-height: 68px;
-        color: #303030;
         letter-spacing: 0;
     }
     
@@ -223,18 +245,26 @@ body {
         font-weight: 400;
         line-height: 28px;
         letter-spacing: 2.5px;
-        color: #303030;
+    }
+
+    .block1{
+        flex: 1 1 50%;
+    }
+    .block2 {
+        flex: 0 0 300px;
+    }
+    .block3 {
+        flex: 1 1 50%;
+    }
+    .block4 {
+        flex: 0 0 300px;
     }
 }
 
-.info::before {
-    content: '';
-    height: 100%;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    
-    background: rgba(255, 255, 255, 0.75);
+
+.nightzone {
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
 }
 
 .active {
@@ -246,6 +276,10 @@ body {
 /*----------------------------------------------------------------*/
 
 @media (max-width: 688px) {
+    .main { 
+        padding: 0px 15px 0px;
+    }   
+
     .time {
         &__clock {
             font-size: 150px;
@@ -257,8 +291,8 @@ body {
         }
 
         &__button {
-            bottom: 40px;
-            left: 0;
+            position: relative;
+            top: 20px;
         }
 
         &__local {
@@ -268,12 +302,35 @@ body {
 
     .random {
         max-width: 500px;
-        &__title {
-            padding-right:20px;
+    }
+
+    .info {
+        height: 40%;
+
+        &__wrapper {
+            padding: 40px 15px;
         }
 
-        &__img {
-            right: 0;
+        &__block {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 40px;
+            line-height: 44px;
+            margin-bottom: 30px;
+        }
+
+        &__text {
+            font-size: 16px;
+            line-height: 28px;
+        }
+
+        .block2 {
+            flex: 1 1 100%;
+        }
+        
+        .block4 {
+            flex: 1 1 100%;
         }
     }
 }
@@ -295,11 +352,23 @@ body {
             flex-wrap: wrap;
         }
     }
+    .info {
+        &__wrapper {
+            padding: 40px 15px;
+        }
+
+        &__block {
+            font-size: 24px;
+        }
+        &__text {
+            font-size: 12px;
+        }
+    }
 }
 
 @media (max-width: 380px) {
     .main {
-        padding: 25px 15px 25px;
+        padding: 0px 15px;
     }
     
     .time {
@@ -314,8 +383,17 @@ body {
         }
 
         &__button {
-            bottom: 0;
-            left: 0;
+            height: 45px;
+            width: 136px;
+        }
+
+        &__more {
+            font-size: 14px;
+        }
+
+        &__krug {
+            height: 35px;
+            width: 35px;
         }
     }
     .random {

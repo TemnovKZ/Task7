@@ -14,8 +14,10 @@
                 <button class="random__btn" onclick="newQuote()">
                     <img class="random__img" alt="arrow__krug" src="img/icon/btn.png">
                 </button>
-                <p class="random__title" id="quoteDisplay">«Не оборачивается тот, кто устремлён к звёздам»</p>
-                <p class="random__subtitle">Леонардо да Винчи</p>
+                <div class="random__block">
+                    <p class="random__title" id="quoteDisplay">«Не оборачивается тот, кто устремлён к звёздам»</p>
+                    <p class="random__subtitle">Леонардо да Винчи</p>
+                </div>
             </section>
             <section class="time">
                 <div class="time__title">
@@ -35,22 +37,24 @@
                 </div>
             </section>
             <section class="info">
-                <div class="info__wrapper">
-                    <div class="info__block">
-                        <p class="info__text">CURRENT TIMEZONE</p>
-                        <div class="info__city"></div>
-                    </div>
-                    <div class="info__block">
-                        <p class="info__text">Day of the week</p>
-                        <div class="info__day-week"></div>
-                    </div>
-                    <div class="info__block">
-                        <p class="info__text">Day of the year</p>
-                        <div class="info__day-year"></div>
-                    </div>
-                    <div class="info__block">
-                        <p class="info__text">Week number</p>
-                        <div class="info__week"></div>
+                <div class="info__bg">
+                    <div class="info__wrapper">
+                        <div class="info__block block1">
+                            <p class="info__text">CURRENT TIMEZONE</p>
+                            <div class="info__city"></div>
+                        </div>
+                        <div class="info__block block2">
+                            <p class="info__text">Day of the week</p>
+                            <div class="info__day-week"></div>
+                        </div>
+                        <div class="info__block block3">
+                            <p class="info__text">Day of the year</p>
+                            <div class="info__day-year"></div>
+                        </div>
+                        <div class="info__block block4">
+                            <p class="info__text">Week number</p>
+                            <div class="info__week"></div>
+                        </div>
                     </div>
                 </div>
             </section>
