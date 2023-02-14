@@ -18,7 +18,6 @@ let hour = dayjs().format('HH');
 
 clock.innerHTML = dayjs().format('HH:mm');
 
-<<<<<<< HEAD
 
 setInterval (function() {
     clock.innerHTML = dayjs().format('HH:mm');
@@ -29,7 +28,7 @@ setInterval (function() {
         wrapper.classList.remove ('night');
         timeZoneBg.classList.remove('nightzone');
     }
-=======
+    
 if (hour < 20 && hour > 7){
     wrapper.style.backgroundImage = 'url(../img/bg-day.jpg)'
 } else {
@@ -38,7 +37,6 @@ if (hour < 20 && hour > 7){
 
 setInterval(function(){
     clock.innerHTML = dayjs().format('HH:mm');
->>>>>>> cf354d0aeda27902205a9b1e8989b6c5594ea654
 }, 1000);   
 
 
