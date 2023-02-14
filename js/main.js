@@ -18,7 +18,6 @@ let hour = dayjs().format('HH');
 
 clock.innerHTML = dayjs().format('HH:mm');
 
-
 setInterval (function() {
     clock.innerHTML = dayjs().format('HH:mm');
     if (hour > 20 || hour < 7){
@@ -28,16 +27,8 @@ setInterval (function() {
         wrapper.classList.remove ('night');
         timeZoneBg.classList.remove('nightzone');
     }
-    
-if (hour < 20 && hour > 7){
-    wrapper.style.backgroundImage = 'url(../img/bg-day.jpg)'
-} else {
-    wrapper.style.backgroundImage = 'url(../img/bg-night.jpg)'
-}
-
-setInterval(function(){
-    clock.innerHTML = dayjs().format('HH:mm');
 }, 1000);   
+
 
 
 if (hour > 6 && hour <= 10) {
@@ -52,7 +43,7 @@ if (hour > 6 && hour <= 10) {
 } else if (hour > 22 || hour <= 6) {
     document.querySelector('.time__icon').src='img/icon/moon.png'
     timeText.innerHTML = 'GOOD NIGHT'
-};
+}
 
 
 /*--                Рандом                 --*/
@@ -133,4 +124,4 @@ document.querySelector('.info__day-week').innerHTML = dayjs().day();
 document.querySelector('.info__day-year').innerHTML = dayjs().dayOfYear();
 document.querySelector('.info__week').innerHTML = dayjs().week();
 
-console.log(dayjs().week());
+
