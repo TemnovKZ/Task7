@@ -476,6 +476,9 @@ body {
     height: 35px;
     width: 35px;
   }
+  .info_wrapper {
+    padding: 15px 10px
+  }
 
   .random__title {
     font-size: 14px;
